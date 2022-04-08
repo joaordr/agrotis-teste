@@ -1,12 +1,12 @@
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/joaordr/agrotis-teste?color=%2304D361">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/joaordr/patients-list">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/joaordr/agrotis-teste">
 </p>
 
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> |
- <a href="#-como-executar-o-projeto">Como executar</a> | 
+ <a href="#-rodando-a-aplicação">Como executar</a> | 
  <a href="#-tecnologias">Tecnologias</a> | 
 </p>
 
