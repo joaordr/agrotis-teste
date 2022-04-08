@@ -1,0 +1,15 @@
+.clearButton {
+    z-index: 1;
+    display: flex;
+    position: absolute;
+    right: 27px;
+    top: 22px;
+    background: none;
+    border: none;
+    font-size: 10px;
+    color: #828D8C;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
