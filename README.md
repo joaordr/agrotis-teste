@@ -49,5 +49,5 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Material-UI](https://mui.com/pt/)
 - [date-fns](https://date-fns.org)
 - [React Hook Form](https://react-hook-form.com)
-- [Sass](https://sass-lang.com/)
+- [styled-components](https://styled-components.com)
 
