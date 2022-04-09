@@ -1,4 +1,3 @@
-import { cloneElement } from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -31,13 +30,14 @@ export default function SelectInput({ children, control, rules, ...props }) {
                         <InputLabel error={!!error} id={props.label.replace(/ /g, "").toLowerCase()}>{props.label}</InputLabel>
                         <Select
                             labelId={props.label.replace(/ /g, "").toLowerCase()}
+                            data-testid={props.id}
                             id={props.id}
                             value={value}
                             onChange={onChange}
                             MenuProps={MenuProps}
                             error={!!error}
                         >
-                            {children.map((component) => cloneElement(component))}
+                            {children}
                         </Select>
                         {(props.id === 'infosPropriedade' && value !== '') ?
                             <FormHelperText>CNPJ {JSON.parse(value).cnpj}</FormHelperText>
