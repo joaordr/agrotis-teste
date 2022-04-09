@@ -35,6 +35,8 @@ export default function Form() {
     function onSubmit(data) {
         data = {
             ...data,
+            dataInicial: data.dataInicial.toISOString(),
+            dataFinal: data.dataFinal.toISOString(),
             infosPropriedade: JSON.parse(data.infosPropriedade),
             laboratorio: JSON.parse(data.laboratorio)
         }
@@ -73,7 +75,7 @@ export default function Form() {
                             })}
                         </SelectInput>
                     </div>
-                    
+
                     <TextInput control={control} rules={{ maxLength: observacaoMaxLength }} label={'Observações'} id={'observacoes'} multiline rows={4} />
                 </div>
             </form>
