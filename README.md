@@ -50,4 +50,5 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [date-fns](https://date-fns.org)
 - [React Hook Form](https://react-hook-form.com)
 - [styled-components](https://styled-components.com)
+- [Jest](https://jestjs.io/pt-BR/)
 
