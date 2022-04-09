@@ -8,6 +8,8 @@
 
 Front-End teste da [Agrotis](https://www.agrotis.com).
 
+[Projeto hospedado](https://agrotis-teste.netlify.app)
+
 
 ## 🚀 Rodando a aplicação
 
