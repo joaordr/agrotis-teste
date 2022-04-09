@@ -28,15 +28,32 @@ export const Content = styled.div`
 
     .row1 {
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
-        column-gap: 15px;        
+        grid-template-columns: 2fr 2fr;
+        column-gap: 15px;      
+
+        .datePickersContainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 15px;
+        }
+
+        @media(max-width: 720px) {
+            grid-template-columns: 1fr;   
+            row-gap: 10px;           
+        }
     }
 
     .row2 {
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 15px;
-        margin: 15px 0;
+        margin: 10px 0;
+
+        @media(max-width: 720px) {
+            grid-template-columns: 1fr;   
+            row-gap: 10px;
+            margin: 5px 0;       
+        }
     }
 `;
 
@@ -55,7 +72,7 @@ export const SubmitButton = styled.button`
     }
 `;
 
-export const Option = styled.div`
+export const CustomOption = styled.div`
     p {
         font-size: 12pt;
         margin-bottom: -7px;

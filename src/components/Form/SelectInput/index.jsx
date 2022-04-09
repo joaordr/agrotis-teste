@@ -26,7 +26,7 @@ export default function SelectInput({ children, control, rules, ...props }) {
                 defaultValue=''
                 rules={rules}
                 render={({ field: { onChange, value }, fieldState: { error } }) => (
-                    <FormControl variant="standard" fullWidth color="success">
+                    <FormControl fullWidth variant="standard" color="success">
                         {value !== '' && <ClearButton type="button" onClick={() => onChange('')}><CloseIcon fontSize="small" /></ClearButton>}
                         <InputLabel error={!!error} id={props.label.replace(/ /g, "").toLowerCase()}>{props.label}</InputLabel>
                         <Select
@@ -39,8 +39,15 @@ export default function SelectInput({ children, control, rules, ...props }) {
                         >
                             {children.map((component) => cloneElement(component))}
                         </Select>
-                        {(props.id === 'infosPropriedade' && value !== '') && <FormHelperText>CNPJ {JSON.parse(value).cnpj}</FormHelperText>}
-                        {(props.id === 'laboratorio' && !!error) && <FormHelperText error><ReportProblemIcon /> Error</FormHelperText>}
+                        {(props.id === 'infosPropriedade' && value !== '') ?
+                            <FormHelperText>CNPJ {JSON.parse(value).cnpj}</FormHelperText>
+                            :
+                            <>{(props.id === 'laboratorio' && !!error) ?
+                                <FormHelperText error><ReportProblemIcon /> Error</FormHelperText>
+                                :
+                                <FormHelperText> </FormHelperText>
+                            }</>
+                        }
                     </FormControl>
                 )}
             />

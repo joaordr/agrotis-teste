@@ -6,7 +6,7 @@ import TextInput from './TextInput';
 import EventAlert from './EventAlert';
 import { useForm } from "react-hook-form";
 
-import { Container, Content, Header, Option, SubmitButton } from './styles';
+import { Container, Content, Header, CustomOption, SubmitButton } from './styles';
 
 const nomeMaxLength = 40;
 const observacaoMaxLength = 1000;
@@ -56,14 +56,16 @@ export default function Form() {
 
                     <div className="row1">
                         <TextInput control={control} rules={{ required: true, maxLength: nomeMaxLength }} label={'Nome *'} id={'nome'} />
-                        <DatePickerInput control={control} rules={{ required: true }} label={'Data Inicial *'} id={'dataInicial'} />
-                        <DatePickerInput control={control} rules={{ required: true }} label={'Data Final *'} id={'dataFinal'} />
+                        <div className="datePickersContainer">
+                            <DatePickerInput control={control} rules={{ required: true }} label={'Data Inicial *'} id={'dataInicial'} />
+                            <DatePickerInput control={control} rules={{ required: true }} label={'Data Final *'} id={'dataFinal'} />
+                        </div>
                     </div>
 
                     <div className="row2">
                         <SelectInput control={control} rules={{ required: true }} label={'Propriedade *'} id={'infosPropriedade'}>
                             {propriedades.map(item => {
-                                return <MenuItem value={JSON.stringify(item)} key={item.id}><Option><p>{item.name}</p><small>CNPJ {item.cnpj}</small></Option></MenuItem>
+                                return <MenuItem value={JSON.stringify(item)} key={item.id}><CustomOption><p>{item.name}</p><small>CNPJ {item.cnpj}</small></CustomOption></MenuItem>
                             })}
                         </SelectInput>
                         <SelectInput control={control} rules={{ required: true }} label={'Laboratório *'} id={'laboratorio'}>

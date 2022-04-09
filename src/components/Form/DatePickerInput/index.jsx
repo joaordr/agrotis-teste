@@ -24,7 +24,7 @@ export default function DatePickerInput({ control, rules, ...props }) {
                             onChange={onChange}
                             renderInput={(params) => <TextField {...params} {...props} variant="standard" fullWidth color="success" error={!!error} />}
                         />
-                        {props.id === 'dataFinal' && <FormHelperText><CharacterCounter>Info</CharacterCounter></FormHelperText>}
+                        {props.id === 'dataFinal' ? <FormHelperText><CharacterCounter>Info</CharacterCounter></FormHelperText> : <FormHelperText> </FormHelperText>}
                     </FormControl>
                 </LocalizationProvider>
             )}
