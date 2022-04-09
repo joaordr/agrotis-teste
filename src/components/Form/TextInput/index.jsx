@@ -4,7 +4,7 @@ import { FormHelperText } from '@mui/material';
 
 import { Controller } from "react-hook-form";
 
-import styles from './textInput.module.scss';
+import { CharacterCounter } from './styles';
 
 export default function TextInput({ control, rules, ...props }) {
     return (
@@ -23,7 +23,7 @@ export default function TextInput({ control, rules, ...props }) {
                         error={!!error}
                         {...props}
                     />
-                    <FormHelperText error={!!error}><span className={styles.character_counter}>{`${value.length}/${rules.maxLength}`}</span></FormHelperText>
+                    <FormHelperText error={!!error}><CharacterCounter>{`${value.length}/${rules.maxLength}`}</CharacterCounter></FormHelperText>
                 </FormControl>
             )}
         />

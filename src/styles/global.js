@@ -7,6 +7,10 @@ export const GlobalStyles = createGlobalStyle`
   --background-card: #FFFFFF;
   --background-card-header: #00796B;
   --background-form-button-hover: #00A98E;
+  --background-secondary-button: #828D8C;
+  --background-secondary-button-hover: #353838;
+  --secondary-font-color: #9E9E9E;
+  --label-color: #69747B;
 }
 
 body {
@@ -37,17 +41,13 @@ body {
   }
 }
 
+/* label {
+  color: var(--label-color) !important;
+} */
+
 a {
   color: inherit;
   text-decoration: none;
-}
-
-.MuiSelect-select {
-  div {
-    small {
-      display: none;
-    }
-  }
 }
 
 input:-webkit-autofill {
