@@ -5,14 +5,11 @@ import { act } from 'react-dom/test-utils';
 import Form from '.';
 
 beforeEach(() => {
-    // add window.matchMedia
-    // this is necessary for the date picker to be rendered in desktop mode.
-    // if this is not provided, the mobile mode is rendered, which might lead to unexpected behavior
+    // renderiza o DatePicker no formato desktop
     Object.defineProperty(window, 'matchMedia', {
         writable: true,
         value: (query) => ({
             media: query,
-            // this is the media query that @material-ui/pickers uses to determine if a device is a desktop device
             matches: query === '(pointer: fine)',
             onchange: () => { },
             addEventListener: () => { },
