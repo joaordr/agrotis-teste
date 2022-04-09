@@ -13,7 +13,7 @@ Front-End teste da [Agrotis](https://www.agrotis.com).
 
  -  Clone este repositório
 ```bash
-git clone https://github.com/joaordr/cotacoin.git
+git clone https://github.com/joaordr/agrotis-teste.git
 ```
 
  - Acesse a pasta do projeto no seu terminal/cmd
