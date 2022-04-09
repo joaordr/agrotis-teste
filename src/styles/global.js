@@ -41,10 +41,6 @@ body {
   }
 }
 
-/* label {
-  color: var(--label-color) !important;
-} */
-
 a {
   color: inherit;
   text-decoration: none;
