@@ -12,7 +12,6 @@ module.exports = {
         "src/**/*.jsx",
         "!src/**/*.spec.jsx",
         "!src/**/_app.jsx",
-        "!src/**/_document.jsx",
     ],
     coverageReporters: ["lcov", "json"]
 };
