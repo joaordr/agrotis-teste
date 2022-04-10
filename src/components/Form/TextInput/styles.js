@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import { styled as MuiStyled } from '@mui/material/styles';
+import { FormHelperText } from '@mui/material';
 
-export const CharacterCounter = styled.span`
-    display: flex;
-    justify-content: flex-end;
-`;
+export const CharacterCounter = MuiStyled(FormHelperText)(() => ({
+    textAlign: 'right'
+}));

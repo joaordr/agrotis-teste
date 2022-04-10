@@ -1,5 +1,4 @@
-import { FormControl, FormHelperText } from '@mui/material';
-import TextField from '@mui/material/TextField';
+import { FormControl, TextField } from '@mui/material';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
@@ -24,7 +23,7 @@ export default function DatePickerInput({ control, rules, ...props }) {
                             onChange={onChange}
                             renderInput={(params) => <TextField {...params} {...props} variant="standard" fullWidth color="success" error={!!error} />}
                         />
-                        {props.id === 'dataFinal' ? <FormHelperText><CharacterCounter>Info</CharacterCounter></FormHelperText> : <FormHelperText> </FormHelperText>}
+                        {props.id === 'dataFinal' ? <CharacterCounter>Info</CharacterCounter> : <CharacterCounter> </CharacterCounter>}
                     </FormControl>
                 </LocalizationProvider>
             )}

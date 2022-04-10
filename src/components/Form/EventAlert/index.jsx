@@ -16,7 +16,7 @@ export default function EventAlert({ eventNotice, setEventNotice }) {
     };
 
     return (
-        <Snackbar sx={{ width: 450 }} open={eventNotice.isOpen} autoHideDuration={5000} onClose={handleClose} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }} TransitionComponent={Slide}>
+        <Snackbar sx={{ width: 450 }} open={eventNotice.isOpen} autoHideDuration={4000} onClose={handleClose} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }} TransitionComponent={Slide}>
             {eventNotice.isError ? (
                 <Alert sx={{ width: '100%' }} onClose={handleClose} icon={<ReportProblemIcon fontSize="inherit" />} severity="error">
                     Preencha os campos obrigatórios.

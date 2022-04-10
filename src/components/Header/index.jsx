@@ -1,9 +1,9 @@
-import { Container, Logo } from './styles';
+import { PageHeader, Logo } from './styles';
 
 export default function Header() {
     return (
-        <Container>
+        <PageHeader position="static">
             <Logo src="./images/logo.svg" alt="Logo Agrotis" />
-        </Container>
+        </PageHeader>
     )
 }

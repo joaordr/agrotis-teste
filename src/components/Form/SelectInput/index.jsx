@@ -1,20 +1,9 @@
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import CloseIcon from '@mui/icons-material/Close';
-import { FormHelperText } from '@mui/material';
+import { FormControl, InputLabel, Select, FormHelperText } from '@mui/material';
 import ReportProblemIcon from '@mui/icons-material/ReportProblem';
+import CloseIcon from '@mui/icons-material/Close';
 import { Controller } from "react-hook-form";
 
-import { ClearButton, Container } from './styles';
-
-const MenuProps = {
-    PaperProps: {
-        style: {
-            maxHeight: 250,
-        },
-    },
-};
+import { ClearButton, Container, MenuProps } from './styles';
 
 export default function SelectInput({ children, control, rules, ...props }) {
     return (
@@ -26,7 +15,11 @@ export default function SelectInput({ children, control, rules, ...props }) {
                 rules={rules}
                 render={({ field: { onChange, value }, fieldState: { error } }) => (
                     <FormControl fullWidth variant="standard" color="success">
-                        {value !== '' && <ClearButton type="button" onClick={() => onChange('')}><CloseIcon fontSize="small" /></ClearButton>}
+                        {value !== '' &&
+                            <ClearButton onClick={() => onChange('')} aria-label="clearSelection" size="small">
+                                <CloseIcon fontSize="inherit" />
+                            </ClearButton>
+                        }
                         <InputLabel error={!!error} id={props.label.replace(/ /g, "").toLowerCase()}>{props.label}</InputLabel>
                         <Select
                             labelId={props.label.replace(/ /g, "").toLowerCase()}

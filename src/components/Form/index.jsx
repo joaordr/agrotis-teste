@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import MenuItem from '@mui/material/MenuItem';
+import { Box, Container, FormHelperText, Grid, Typography, MenuItem } from '@mui/material';
+import { useForm } from "react-hook-form";
+
 import DatePickerInput from './DatePickerInput';
 import SelectInput from './SelectInput';
 import TextInput from './TextInput';
 import EventAlert from './EventAlert';
-import { useForm } from "react-hook-form";
 
-import { Container, Content, Header, CustomOption, SubmitButton } from './styles';
+import { FormHeader, FormContainer, CustomOption, SubmitButton } from './styles';
 
 const nomeMaxLength = 40;
 const observacaoMaxLength = 1000;
@@ -46,39 +47,51 @@ export default function Form() {
     }
 
     return (
-        <Container>
-            <form onSubmit={handleSubmit(onSubmit, onError)}>
-                <Header>
-                    <h3>Teste front-end</h3>
-                    <SubmitButton type="submit">SALVAR</SubmitButton>
-                </Header>
-                <Content>
+        <Container maxWidth="xl">
+            <FormContainer elevation={1}>
+                <form onSubmit={handleSubmit(onSubmit, onError)}>
 
-                    <div className="row1">
-                        <TextInput control={control} rules={{ required: true, maxLength: nomeMaxLength }} label={'Nome *'} id={'nome'} />
-                        <div className="datePickersContainer">
-                            <DatePickerInput control={control} rules={{ required: true }} label={'Data Inicial *'} id={'dataInicial'} />
-                            <DatePickerInput control={control} rules={{ required: true }} label={'Data Final *'} id={'dataFinal'} />
-                        </div>
-                    </div>
+                    <FormHeader>
+                        <Typography variant="h6">
+                            Teste front-end
+                        </Typography>
+                        <SubmitButton type="submit">SALVAR</SubmitButton>
+                    </FormHeader>
 
-                    <div className="row2">
-                        <SelectInput control={control} rules={{ required: true }} label={'Propriedade *'} id={'infosPropriedade'}>
-                            {propriedades.map(item => {
-                                return <MenuItem value={JSON.stringify(item)} key={item.id}><CustomOption><p>{item.nome}</p><small>CNPJ {item.cnpj}</small></CustomOption></MenuItem>
-                            })}
-                        </SelectInput>
-                        <SelectInput control={control} rules={{ required: true }} label={'Laboratório *'} id={'laboratorio'}>
-                            {laboratorios.map(item => {
-                                return <MenuItem value={JSON.stringify(item)} key={item.id}>{item.nome}</MenuItem>
-                            })}
-                        </SelectInput>
-                    </div>
+                    <Box sx={{ flexGrow: 1, p: 2 }} >
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} md={6}>
+                                <TextInput control={control} rules={{ required: true, maxLength: nomeMaxLength }} label={'Nome *'} id={'nome'} />
+                            </Grid>
+                            <Grid item xs={6} md={3}>
+                                <DatePickerInput control={control} rules={{ required: true }} label={'Data Inicial *'} id={'dataInicial'} />
+                            </Grid>
+                            <Grid item xs={6} md={3}>
+                                <DatePickerInput control={control} rules={{ required: true }} label={'Data Final *'} id={'dataFinal'} />
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <SelectInput control={control} rules={{ required: true }} label={'Propriedade *'} id={'infosPropriedade'}>
+                                    {propriedades.map(item => {
+                                        return <CustomOption value={JSON.stringify(item)} key={item.id}><p>{item.nome}</p><FormHelperText>CNPJ {item.cnpj}</FormHelperText></CustomOption>
+                                    })}
+                                </SelectInput>
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <SelectInput control={control} rules={{ required: true }} label={'Laboratório *'} id={'laboratorio'}>
+                                    {laboratorios.map(item => {
+                                        return <MenuItem value={JSON.stringify(item)} key={item.id}>{item.nome}</MenuItem>
+                                    })}
+                                </SelectInput>
+                            </Grid>
+                            <Grid item xs={12}>
+                                <TextInput control={control} rules={{ maxLength: observacaoMaxLength }} label={'Observações'} id={'observacoes'} multiline rows={4} />
+                            </Grid>
+                        </Grid>
+                    </Box>
 
-                    <TextInput control={control} rules={{ maxLength: observacaoMaxLength }} label={'Observações'} id={'observacoes'} multiline rows={4} />
-                </Content>
-            </form>
-            <EventAlert eventNotice={eventNotice} setEventNotice={setEventNotice} />
+                </form>
+                <EventAlert eventNotice={eventNotice} setEventNotice={setEventNotice} />
+            </FormContainer>
         </Container>
     )
 }

@@ -1,12 +1,13 @@
 import styled from 'styled-components';
+import { styled as MuiStyled } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
 
-export const Container = styled.div`
-    display: flex;
-    background: var(--background-header);
-    box-shadow: rgb(126, 126, 126) 0px 0px 5px 1px;
-`;
+export const PageHeader = MuiStyled(AppBar)(() => ({
+    background: 'var(--background-header)',
+    boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.26)'
+}));
 
 export const Logo = styled.img`
-    width: 120px;
+    width: 110px;
     margin: 15px auto;
 `;

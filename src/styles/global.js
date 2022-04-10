@@ -4,12 +4,8 @@ export const GlobalStyles = createGlobalStyle`
 :root {
   --background-body: #F3F2F1;
   --background-header: #FFFFFF;
-  --background-card: #FFFFFF;
-  --background-card-header: #00796B;
+  --background-form-header: #00796B;
   --background-form-button-hover: #00A98E;
-  --background-secondary-button: #828D8C;
-  --background-secondary-button-hover: #353838;
-  --secondary-font-color: #9E9E9E;
   --label-color: #69747B;
 }
 
