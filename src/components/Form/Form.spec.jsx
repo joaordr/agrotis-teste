@@ -47,11 +47,11 @@ describe('Form component', () => {
 
         const selectPropriedade = screen.getByTestId("infosPropriedade");
         fireEvent.mouseDown(within(selectPropriedade).getByRole('button'));
-        fireEvent.click(within(screen.getByRole('listbox')).getByText(/Agrotis 1/i));
+        fireEvent.click(within(screen.getByRole('listbox')).getByText('Agrotis 1'));
 
         const selectLaboratorio = screen.getByTestId("laboratorio");
         fireEvent.mouseDown(within(selectLaboratorio).getByRole('button'));
-        fireEvent.click(within(screen.getByRole('listbox')).getByText(/Agro Skynet/i));
+        fireEvent.click(within(screen.getByRole('listbox')).getByText('Agro Skynet'));
 
         await act(async () => {
             fireEvent.change(screen.getByLabelText('Nome', { exact: false }), { target: { value: 'Jon Doe' } });
