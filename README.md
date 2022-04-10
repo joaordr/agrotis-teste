@@ -13,6 +13,11 @@ Front-End teste da [Agrotis](https://www.agrotis.com).
 
 ## 🚀 Rodando a aplicação
 
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
+
  -  Clone este repositório
 ```bash
 git clone https://github.com/joaordr/agrotis-teste.git
@@ -38,6 +43,13 @@ yarn dev
 ```
 
 A aplicação será aberta na porta: 3000 - acesse http://localhost:3000
+
+ - Para executar os testes
+```bash
+npm run test
+# ou
+yarn test
+```
 
 ---
 
