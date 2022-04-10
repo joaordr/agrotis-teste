@@ -42,6 +42,10 @@ a {
   text-decoration: none;
 }
 
+input, textarea {
+  cursor: pointer;
+}
+
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px white inset;
 }
